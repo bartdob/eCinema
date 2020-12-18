@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop',
-    'users',
+    'users.apps.UsersConfig',
     'crispy_forms',
     'cart',
 ]
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_token.middleware.TokenMiddleware',
 ]
 
 ROOT_URLCONF = 'cinema.urls'
