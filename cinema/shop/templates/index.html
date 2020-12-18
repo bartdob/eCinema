@@ -12,6 +12,7 @@
             <p>price: {{movie.price}}</p>
             <p> <img src="{{movie.image.url}}" class="img-fluid" alt="">pic </p>
             <button>
+                <a href="{% url 'cart_add' movie.id %}">Add To Cart</a>
           </button>
           </div>
 

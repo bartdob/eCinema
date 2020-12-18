@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 from users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
+from cart import views
 
 urlpatterns = [
         path('', include('shop.urls')),
@@ -32,6 +33,8 @@ urlpatterns = [
         path('password_reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
         path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),
         path('newuser/', user_views.newuser, name='newuser'),
+        path('cart/add/<int:id>/', views.cart_add, name='cart_add'),
+        path('cart/cart-detail/',views.cart_detail,name='cart_detail'),
 ]
 
 # for media files
