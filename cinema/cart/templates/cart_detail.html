@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load cart_tag %}
+
+Total :: {{request.session.cart|length}}
+
+Cart Detail::
+{% for key,value in request.session.cart.items %}
+    <div class="container border border-dark"></div>
+    <!-- <img src="{{value.image}}" width="120" height="80"><br> -->
+    <p>{{value.name}}</p> price: {{value.price}} quantity: {{value.quantity}}
+    Total {{ value.price|multiply:value.quantity }}
+{% endfor %}
+
+{% endblock content %}
