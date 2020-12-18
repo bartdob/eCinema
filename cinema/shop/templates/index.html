@@ -2,7 +2,7 @@
 {% block content %}
 
     <div class="container border border-info w-100">
-      <div class="row">
+      <div class="row d-flex">
         {% for movie in movies %}
 
         <div class="col text-center border border-warning">
@@ -10,7 +10,7 @@
             <p>{{movie.name}}</p>
             <p> year: {{movie.year}}</p>
             <p>price: {{movie.price}}</p>
-            <p> <img src="{{movie.image.url}}" class="img-fluid" alt="">pic </p>
+            <p> <img src="{{movie.image.url}}" class="img-fluid" alt=""></p>
             <button>
                 <a href="{% url 'cart_add' movie.id %}">Add To Cart</a>
           </button>

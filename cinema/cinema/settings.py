@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shop',
     'users',
     'crispy_forms',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processor.cart_total_amount',
             ],
         },
     },
@@ -129,5 +131,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+
+# autotication
+
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+
+# cart plugin
+
+CART_SESSION_ID = 'cart'
